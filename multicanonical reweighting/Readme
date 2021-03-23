@@ -1,0 +1,3 @@
+This script loads the joint distribution P(E,N) from a simulation at beta_0, mu_0. Then it uses histogram reweighting to estimate P(E,N) at some nearby beta_1, mu_1. The user specifies the temperature interval (in units of tau=(T-Tc)/Tc), and the script finds mu such that the peaks have equal weight.
+
+This is used to generate a preweighting file for multicanonical sampling at lower temperatures.
