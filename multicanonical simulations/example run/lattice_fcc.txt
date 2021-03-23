@@ -1,0 +1,21 @@
+specify fcc lattice: dim, size(m,n,l), neighbors, edge vectors
+3
+30 30 30
+12
+1 0 0
+0 1 0
+1 1 0
+-1 0 0
+0 -1 0
+-1 -1 0
+0 0 1
+0 1 1
+-1 0 1
+0 0 -1
+0 -1 -1
+1 0 -1
+
+
+
+
+   
