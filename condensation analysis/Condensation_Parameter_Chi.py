@@ -1,4 +1,4 @@
-#This script loads a sequence, calculates the condensation parameter chi, and use the linear chi-Tc fit to find the critical temperatur Tc.
+#This script loads a sequence, calculates the condensation parameter Psi, and use the linear Psi-Tc fit to find the critical temperatur Tc.
 #Tc is returned in units of epsilon/k_B, where epsilon is the specific binding energy.
 
 #Fits were performed for Monte Carlo simulations on an FCC lattice with V=30^3 sites and nonspecific-interaction parameter J=0.05*epsilon
@@ -23,10 +23,10 @@ import sys
 seqFile=sys.argv[1]
 
 
-#calculate Chi
+#calculate Psi
 
 #params: g(1), correlation metric Pcorr, a/L
-def getChi(g1,Pcorr,plusRatio):
+def getPsi(g1,Pcorr,plusRatio):
     
     minusRatio=1-plusRatio
     normTerm=4*Pcorr
@@ -42,9 +42,9 @@ def getChi(g1,Pcorr,plusRatio):
     return -np.log(entropy*overlapTerm)
 
 
-#use chi and fit to calculate Tc
+#use Psi and fit to calculate Tc
 #argument: numpy array specifying sequence
-#returns: chi, Tc
+#returns: Psi, Tc
 def getCriticalTemperature(seqArray):
     
     thisG1=getG1(seqArray,loopWeight)
@@ -53,15 +53,15 @@ def getCriticalTemperature(seqArray):
     pluses=seqArray[seqArray==1]
     thisPlusRatio=len(pluses)/len(seqArray)
     
-    thisChi=getChi(thisG1,thisPcorr,thisPlusRatio)
+    thisPsi=getPsi(thisG1,thisPcorr,thisPlusRatio)
     
-    thisTc=slope*thisChi+intercept
+    thisTc=slope*thisPsi+intercept
     
     
-    return thisChi,thisTc
+    return thisPsi,thisTc
 
 
-#functions called by getChi
+#functions called by getPsi
 #*************************************************************************************************
 
 #calculate g(1) using SAW and loop entropy
@@ -291,7 +291,7 @@ loopWeight=0.7298937942762107
 
 
 
-#chi-Tc fit using block sequences
+#Psi-Tc fit using block sequences
 slope=0.10894316705597923 
 intercept=2.976691130509688
 
@@ -301,8 +301,8 @@ intercept=2.976691130509688
 #load sequence and perform calculation
 testSeq=np.loadtxt(seqFile,dtype=int,skiprows=2)
 length=int(len(testSeq))
-chi,tc=getCriticalTemperature(testSeq)
-print(chi,tc)
+Psi,tc=getCriticalTemperature(testSeq)
+print(Psi,tc)
 
 
 
