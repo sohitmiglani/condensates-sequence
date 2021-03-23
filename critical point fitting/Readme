@@ -1,0 +1,8 @@
+Given a simulation near the critical point, use histogram reweighting to find the exact critical point by fitting to the order parameter distribution for the 3D Ising model [1]. (For the Ising model, we use the analytical approximation from Tsypin and Blote: https://arxiv.org/pdf/cond-mat/9909343.pdf). 
+
+In particular, consider a variable x=N-sE, where N is the polymer number, E is the energy, and s is a "field mixing parameter." We seek the beta_critical, mu_critical, and s such that the distribution P(x) matches the Ising model's P(M) at criticality. The script attempts the fitting at many different initial guesses and returns a list with the residuals for each initial point. Then the user can take the solution with the smallest residual.
+
+
+
+
+[1] Wilding NB. Simulation studies of fluid critical behaviour. Journal of Physics: Condensed Matter. 1997; 9(3):585.
