@@ -1,0 +1,17 @@
+
+L24 block series:
+
+g(s) from
+/tigress/bweiner/idp/grandCanonical/densityOfStates_4.17.20/run0
+
+random:
+
+g(s) from
+ /tigress/bweiner/idp/grandCanonical/densityOfStates_5.8.20/run1_rand_j0
+
+stoichiometry:
+
+g(s) from
+/tigress/bweiner/idp/grandCanonical/densityOfStates_5.8.20/run3_stoichiometry (b3 flips)
++
+/tigress/bweiner/idp/grandCanonical/densityOfStates_8.4.20/run1_stoichiometry (random)
