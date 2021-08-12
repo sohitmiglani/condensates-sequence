@@ -1,3 +1,0 @@
-specify polymer characteristics: l, sequence
-24
-1 -1 1 1 -1 1 -1 -1 -1 -1 1 1 -1 1 -1 -1 1 1 1 1 -1 -1 -1 1
