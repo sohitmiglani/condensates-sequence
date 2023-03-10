@@ -33,6 +33,8 @@ float getEnergy(vector<vector<vector<site>>> space, vector<int> size,float excha
 					site* thisNeighborPointer=thisSite.neighbors[q];
 					int thisNeighborOccupancy=thisNeighborPointer->occupancy.size();
 					
+					vector<int> occupancy=thisSite.occupancy;
+					
 					auto iterator=occupancy.begin();
 						while(iterator !=occupancy.end())
 						{
