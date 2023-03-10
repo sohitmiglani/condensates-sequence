@@ -42,7 +42,7 @@ void monteCarlo(unordered_map<int,polymer> &polyMap,auto &realSpace,double beta,
 		//number 0 to 4 for single polymer move, 5 for cluster translation, 6 for exchange with reservoir
 		if(polyMap.size()>0)
 		{
-			discrete_distribution<int> moveDist {108,108,9,108,108,1,324};
+			discrete_distribution<int> moveDist {108,108,0,0,108,1,324};
 
 			//nvt
 			// discrete_distribution<int> moveDist {108,108,9,108,108,1,0};
