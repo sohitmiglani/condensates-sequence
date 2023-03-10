@@ -1,20 +1,38 @@
+# Multicanonical Simulations for Ordered Proteins
+
 This folder contains the source code for polymer Monte Carlo simulations in the Grand Canonical Ensemble, with the option of including a "preweighting" file for multicanonical sampling. All code is written in C++17.
 
-Here is an example command to run a simulation:
-"./multicanonical multicanonical_L24_b12_beta0_0.7692846091008065_beta1_0.7716181316764409_j0.05_rep0 lattice_fcc.txt polySpecs_L24_b12.txt annealing_schedule_e0.7716181316764409.txt 100 300000000 4000 0.05 preweighting_L24_b12_beta0_0.7692846091008065_beta1_0.7716181316764409.txt 6920"
+## Install
 
-This command specifies the following inputs:
-1. Executable
-2. Simulation name for parameter record and all data
-3. Lattice specification file
-4. Polymer specification file
-5. Simulated annealing schedule
-6. Initial polymer number
-7. Monte Carlo steps
-8. Write interval
-9. Nonspecific interaction parameter (units of specific binding energy)
-10. Preweighting file for multicanonical simulations (includes chemical potential mu)
-11. Seed for RNG
+```
+git clone https://github.com/BenjaminWeiner/condensates-sequence
+cd condensate-sequence/multicanonical\ simulations/src
+make
+```
+
+
+## Run the program
+
+```
+"./multicanonical multicanonical_name lattice_sc.txt polySpecs.txt annealing_schedule.txt 100 300000000 4000 interaction_energies.txt preweighting_file.txt 6920"
+```
+
+## Inputs
+
+1. Simulation name for parameter record and all data
+2. Lattice specification file
+3. Polymer specification file
+4. Simulated annealing schedule
+- The first column is the beta (1/Temp) and the second column is the number of MC steps for that beta.
+
+5. Initial polymer number
+6. Monte Carlo steps
+7. Write interval
+8. Interaction energy file
+9. Preweighting file for multicanonical simulations (includes chemical potential mu)
+10. Seed for RNG
+
+## Output
 
 The simulation will produce 2 outputs:
 1) A "paramRecord" file recording all parameters.
