@@ -32,7 +32,15 @@ float getEnergy(vector<vector<vector<site>>> space, vector<int> size,float excha
 				{
 					site* thisNeighborPointer=thisSite.neighbors[q];
 					int thisNeighborOccupancy=thisNeighborPointer->occupancy.size();
-					numNeighbors+=thisNeighborOccupancy;
+					
+					auto iterator=occupancy.begin();
+						while(iterator !=occupancy.end())
+						{
+						    vector<int> myOccupancy=*iterator;
+						    cout<<myOccupancy[0]<<" "<<myOccupancy[1]<<" "<<myOccupancy[2]<<", ";
+						    ++iterator;
+						}
+					
 				}
 
 				//have to double neighbor pairs if the site is doubly occupied
