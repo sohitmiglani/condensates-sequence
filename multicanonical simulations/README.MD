@@ -1,6 +1,10 @@
 # Multicanonical Simulations for Ordered Proteins
 
-This folder contains the source code for polymer Monte Carlo simulations in the Grand Canonical Ensemble, with the option of including a "preweighting" file for multicanonical sampling. All code is written in C++17.
+This folder contains the source code for polymer Monte Carlo simulations in the Canonical Ensemble, with the option of including a "preweighting" file for multicanonical sampling. All code is written in C++17.
+
+## Schematic of CodeBase
+
+![Schematic of the CodeBase](schematic.png)
 
 ## Install
 
