@@ -362,7 +362,7 @@ polymer(auto polyInfo, vector<vector<int>> coords, int id,auto &space)
 			auto occIterator=space[startX][startY][startZ].occupancy.begin();
 			occupancyVector=*occIterator;
 			}
-			if(space[startX][startY][startZ].occupancy.size()==0||space[startX][startY][startZ].occupancy.size()==1&&occupancyVector[1]!=sequence[0])
+			if(space[startX][startY][startZ].occupancy.size()==0)
 			{
 				vector<int> myOccupancy={polymerID,sequence[0],0};
 				space[startX][startY][startZ].occupancy.insert(myOccupancy);        //now occupied
@@ -393,7 +393,7 @@ polymer(auto polyInfo, vector<vector<int>> coords, int id,auto &space)
 				auto occIterator=nextSite->occupancy.begin();  //iterator pointing to first occupancy vector 
 				occupancyVector=*occIterator;
 				}
-				if(nextSite->occupancy.size()==0||nextSite->occupancy.size()==1&&occupancyVector[1]!=sequence[i])
+				if(nextSite->occupancy.size()==0)
 				{
 					foundNextSite=true;
 				}
