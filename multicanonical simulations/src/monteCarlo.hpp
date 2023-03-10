@@ -231,7 +231,7 @@ void monteCarlo(unordered_map<int,polymer> &polyMap,auto &realSpace,double beta,
 
 
 	//include Delta U from bonds and nonspecific interactions, plus beta*mu*Delta N
-	double deltaEBond=double(-beta*bondChanges[0]+100*bondChanges[1]+100*bondChanges[2]);
+	double deltaEBond=double(100*bondChanges[0]+100*bondChanges[1]+100*bondChanges[2]);
 	double deltaEPairs=double(neighborPairChanges)*betaJ*(-1);
 
 	double particleWeight=double(deltaNumProteins)*betaMu;
